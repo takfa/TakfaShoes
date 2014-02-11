@@ -53,6 +53,7 @@ public class BackOfficeServlet extends HttpServlet {
 	      //J'instancie un nouveau Panier et je renseigne un attribut de la session
 	      panier=new Panier();
 	      session.setAttribute("panierBack",panier);
+	      
 	    }
 	    
         //Le paramètre "action" permet de définir le choix d'action qu'on veut effectuer au niveau de l'interface
