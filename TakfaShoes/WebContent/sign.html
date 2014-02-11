@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type='text/javascript'>
+function notEmpty(elem, msg){
+	if(elem.value.length == 0){
+		alert(msg);
+		elem.focus();
+		return false;
+	}
+	return true;
+}
+<!-- Fonction qui permet de vérifier la saisie du formulaire d'inscription-->
+function checkForm(){
+	if (document.getElementById('mdpInput').value.length == 0 && document.getElementById('logInput').value.length == 0){
+		alert("Aucune saisie effectuée !");
+		document.getElementById('checkFormInput').setAttribute('name','pb');
+		document.getElementById('checkFormInput').value = "";
+	}
+	else
+	if (document.getElementById('logInput').value.length == 0){
+		alert("Champ obligatoire ! Veuillez saisir un login");
+		document.getElementById('checkFormInput').setAttribute('name','pb');
+		document.getElementById('checkFormInput').value = "";
+	} 
+	else
+	if (document.getElementById('mdpInput').value.length == 0){
+		alert("Champ obligatoire ! Veuillez saisir un mot de passe");
+		document.getElementById('checkFormInput').setAttribute('name','pb');	
+		document.getElementById('checkFormInput').value = "";
+	}
+	else{
+		document.getElementById('checkFormInput').setAttribute('name','ok');
+		document.getElementById('checkFormInput').value = "ok";
+	}
+}
+</script>
+<title>Inscription</title>
+</head>
+<body>
+
+<br/>
+<img src="http://cdn1.iconfinder.com/data/icons/UltimateGnome/128x128/actions/format-indent-more.png"><br><br>
+<center>
+<table  cellspacing="2">
+
+		<tr align="left"><td><img src="http://cdn1.iconfinder.com/data/icons/defaulticon/icons/png/24x24/media-play.png"></td><td><p><span style="color: #000000;font-family: Helvetica;font-size: 26">  Veuillez renseigner le formulaire ci-dessous </p></td>
+		
+		</tr>
+		
+</table>
+
+<form action="LoginServlet" method="post" name="inscription">
+	<table style="border-color:#ffffff;font-family: Helvetica;font-size: 10;color: #0791e9">
+		<tr><td><label>Nom </td><td> <input type="text" name="name" id="nameInput"></label><br/></td></tr>
+		<tr><td><label>Prenom </td><td> <input type="text" name="fname" id="fnameInput"></label><br/></td></tr>
+		<tr><td><label>Login </td><td> <input type="text" name="login" id="logInput"></label>*<br/></td></tr>
+		<tr><td><label>Mot de passe </td><td> <input type="password" name="mdp" id="mdpInput"></label>*<br/></td></tr>
+		<tr><td><label>Photo </td><td> <input type="file" name="photo"></label><br/></td></tr>		
+		<tr><td></td><td><input type="submit" value="inscription" name="submit" onclick="checkForm()"></td></tr>
+		<tr><td><label></td><td> <input type="hidden" id="checkFormInput"></label><br/></td></tr>
+	</TABLE>
+</form></center>
+</body>
+</html>
