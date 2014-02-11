@@ -25,7 +25,7 @@ import Manager.UserManager;
  * à cette tache et de le modifier. 
  */
 public class BackOfficeServlet extends HttpServlet {
-	
+	//toto
 	private static final long serialVersionUID = 1L;
 	//Déclaration d'un ProductManager pour effectuer les appels en base relatifs aux produits
 	private ProductManager pm = new ProductManager();
